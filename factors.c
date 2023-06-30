@@ -44,7 +44,7 @@ void facto(long int num)
 {
 	long int i;
 
-	for (i = 2; i < (num / 2) + 1; i++)
+	for (i = 2; i < num; i++)
 	{
 		if (num % i == 0)
 		{
