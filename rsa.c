@@ -1,10 +1,17 @@
-#include "func.h"
+#include "factors.h"
+
+/**
+ * main - rsa problem
+ * @argc: arg counter
+ * @argv: arg vector
+ * Return: always 0
+ */
 
 int main(int argc, char *argv[])
 {
-	FILE *file;
+	FILE *fptr;
 	size_t count;
-	ssize_t nb;
+	ssize_t line;
 	char *buffer = NULL;
 
 
@@ -13,17 +20,15 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Usage: factor <filename>\n");
 		exit(EXIT_FAILURE);
 	}
-
-	file = fopen(argv[1], "r");
-	if (file == NULL)
+	fptr = fopen(argv[1], "r");
+	if (fptr == NULL)
 	{
 		fprintf(stderr, "Error: can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
-	while((nb = getline(&buffer, &count, file)) != -1)
+	while((line = getline(&buffer, &count, fptr)) != -1)
 	{
-		facto(atol(buffer));
+		factorize(buffer);
 	}
 
 	return (0);
