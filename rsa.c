@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: factor <filename>\n");
+		fprintf(stderr, "Usage: rsa <filename>\n");
 		exit(EXIT_FAILURE);
 	}
 	fptr = fopen(argv[1], "r");
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	}
 	while((line = getline(&buffer, &count, fptr)) != -1)
 	{
-		factorize(buffer);
+		facto(atol(buffer));
 	}
 
 	return (0);
