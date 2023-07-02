@@ -56,3 +56,53 @@ int gcd(int a, int b)
  
     return gcd((b - a) >> 1, a);
 }
+
+/**
+ * g - pseudorandom function
+ * @x: the parameter
+ * @n: second parameter
+ * return: long int
+ */
+
+long int g(long int x, long int n)
+{
+	return ((x * x + 1) % n);
+}
+
+/**
+ * abso -  absolut value
+ * @x: first param
+ * Return: long int
+ */
+
+long int abso(long int x)
+{
+	if (x < 0)
+		return (-x);
+	return (x);
+}
+
+/**
+ * facto2 - second method
+ * @num: the number
+ * Return: nothing
+ */
+
+void facto2(long int num)
+{
+	long int x = 2, y = 2, d = 1;
+
+	while (d == 1)
+	{
+		x = g(x, num);
+		y = g(g(y, num), num);
+		d = gcd(abso(x - y), num);
+	}
+
+	if (d == num)
+		facto(num);
+	else if (d < num / d)
+		printf("%ld=%ld*%ld\n",num,num/d, d);
+	else
+		printf("%ld=%ld*%ld\n",num,d, num/d);
+}
