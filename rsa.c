@@ -1,4 +1,4 @@
-#include "factors.h"
+#include "func.h"
 
 /**
  * main - rsa problem
