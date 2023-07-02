@@ -18,7 +18,6 @@ void facto(long int num)
 			break;
 		}
 	}
-	printf(" ================== \n");
 }
 
 /**
