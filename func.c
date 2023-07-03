@@ -10,6 +10,11 @@ void facto(long int num)
 {
 	long int i;
 
+	if (num == 0)
+	{
+		printf("0=0*0\n");
+		return;
+	}
 	for (i = 2; i < num; i++)
 	{
 		if (num % i == 0)
