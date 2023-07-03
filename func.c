@@ -15,9 +15,10 @@ void facto(long int num)
 		if (num % i == 0)
 		{
 			printf("%ld=%ld*%ld\n",num,num/i,i);
-			break;
+			return;
 		}
 	}
+	printf("%ld=%ld*%ld\n",num,num,(long int)1);
 }
 
 /**
