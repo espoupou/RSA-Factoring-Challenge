@@ -98,6 +98,12 @@ void facto2(long int num)
 {
 	long int x = 2, y = 2, d = 1;
 
+	if (num == 0)
+        {
+                printf("0=0*0\n");
+                return;
+        }
+
 	while (d == 1)
 	{
 		x = g(x, num);

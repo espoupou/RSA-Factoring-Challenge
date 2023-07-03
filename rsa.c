@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	}
 	while((line = getline(&buffer, &count, fptr)) != -1)
 	{
-		facto(atol(buffer));
+		facto2(atol(buffer));
 	}
 
 	return (0);
